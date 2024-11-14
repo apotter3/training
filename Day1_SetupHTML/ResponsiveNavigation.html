@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./MyCSS/ResponsiveNavigation.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ebde61fd21.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="header"> <!-- For semantic purposes, rather than using a div, a header tag will be more appropriate to use in the top introductory section of a web page or document.
+                        It is mainly used to wrap content such as a logo, search bar, menu or navigation items, and many others.-->
+            <div class="container">
+                <nav>
+                    <img src="Images/cry.jpg"class="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <div class="fas">
+                        <i class="fa-regular fa-circle-xmark"onclick="closemenu()"></i><!--Event that triggers on user click-->
+                        </div>
+                    </ul>
+                    <div class="icons">
+                        <i class="fa-solid fa-bars" onclick="openmenu()"></i></div>
+                </nav>
+
+                <div class="header-text">
+                    <h1>Hi there, I am <span>Anaya Potter</span>.</h1>
+                    <p>Web Designer</p>
+                </div>
+            </div>
+    </header>
+    
+    <!-------About section ------->
+    <div id="about">
+                <div class="about-text">
+                    <h1 class="subtitle">About me</h1>
+                    <p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                    in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+               
+                <div class="tab-titles">
+                    <p class="tabs active-link" onclick="opentab('skills')"> Skills</p> <!--onclick to make tabs functional and show correct text-->
+                    <p class="tabs" onClick="opentab('experience')"> Experience</p>
+                    <p class="tabs" onClick="opentab('education')"> Education</p>
+                </div>
+                <!--Common HTML events
+                    onchange	    An HTML element has been changed
+                    onclick	        The user clicks an HTML element
+                    onmouseover	    The user moves the mouse over an HTML element
+                    onmouseout	    The user moves the mouse away from an HTML element
+                    onkeydown	    The user pushes a keyboard key
+                    onload	        The browser has finished loading the page-->
+
+                <!---Skills-->
+                <div class="tab-contents active-tab" id="skills"><!---Add opentab function to each tab content-->
+                    <ul>
+                        <li><span>Web development</span><br></li>
+                        <li><span>iOS App development</span><br></li>
+                        <li><span>UI/UX</span><br></li>
+
+                    </ul>
+                </div>
+                <!---Experience-->
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Web development</span><br></li>
+                        <li><span>iOS App development</span><br></li>
+                        <li><span>UI/UX</span><br></li>
+
+                    </ul>
+                </div>
+                <!---Education-->
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Iona  University</span><br></li>
+                        <li><span>iOS App development</span><br></li>
+                        <li><span>UI/UX</span><br></li>
+
+                    </ul>
+                </div>
+        </div>
+    <!------------services-------->
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="#">learn more</a>
+                </div>
+                <div>
+                    <h2>UI/UX</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="#">learn more</a>
+                </div>
+                <div>
+                    <h2>Tutoring</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="#">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------portfolio----------->
+
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="subtitle">My Work</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="Images/cry.jpg">
+
+                    </div>
+                    <div class="work">
+                        <img src="Images/cry.jpg">
+
+                    </div>
+                    <div class="work">
+                        <img src="Images/cry.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+
+<script>
+    var tabs =  document.getElementsByClassName("tabs");/*create variable to store tabs(links) and tab contents(content for each tab) class*/
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){  /*define opentab function and create for loops to remove the line and text for each tab and its content on click*/
+        for(tab of tabs){
+            tab.classList.remove("active-link");/* removes the line under the current active link*/
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");/* removes the text under the current active tab*/
+        }
+
+        event.currentTarget.classList.add("active-link"); /* Will display the active link onclick*/
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var side_menu =  document.getElementById("sidemenu");
+
+    function openmenu(){
+        side_menu.style.right="0";
+    }
+    function closemenu(){
+        side_menu.style.right="-250px";
+    }
+</script>
+
+</body>
+</html>

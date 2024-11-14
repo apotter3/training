@@ -1,0 +1,45 @@
+*{
+    font-family: inconsolata, serif;
+}
+
+ul{
+    list-style-type:none;  /*ovewites disc*/
+    
+}
+
+li {
+    display: inline;
+    background-color: aqua;
+    padding: 10px;
+    border: 30px black;
+    border-style: solid;
+    
+
+}
+
+.lists{
+    list-style-type: disc;
+    list-style-position: outside;
+
+   
+}
+
+
+/*
+    list-style-type: none; - bullets will not appear
+    Play with the other options
+
+    list-style-position: inside; - Tells browser bullets are inside the ul. outside is by default
+    
+    navigation
+
+        use display: inline to have links next to each other
+
+    border
+        box-shadow: x y blur spacing color;
+        box-shadow: inset; - shadow inside the box
+
+
+
+
+*/

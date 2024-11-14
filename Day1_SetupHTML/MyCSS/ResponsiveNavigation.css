@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"Courier New", monospace;
+    box-sizing: border-box; /*border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. 
+                            If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width. 
+                            This typically makes it much easier to size elements.*/
+    
+ }
+
+ html{
+     scroll-behavior:smooth; /*enables smooth, animated scrolling within a webpage when using anchor links or JavaScript scroll commands.*/
+ }
+
+ body{
+     background-color: black;
+     color:#fff;
+ }
+ 
+ #header{
+     width: 100vw;      /*vw for viewport width, which works similar to vh but is based on the width of the viewport.*/
+     height: 100vh;     /*Setting an element’s height to 100vh makes it exactly as tall as the viewport(the visible part of the web page), filling the entire screen vertically.*/
+     background-image: radial-gradient(farthest-side at 100% 70%,rgb(155, 19, 155),rgb(89, 24, 133),rgb(0, 0, 100));
+ }
+ 
+ .container{
+    padding: 10px 10%;
+ 
+ }
+ 
+ nav{
+    background-color: rgb(0, 0, 100);
+    width:100%;
+    display:flex;                           /*enables Flexbox, a layout model that provides an efficient way to align and distribute items within a container.
+                                                It’s especially useful for building responsive layouts without complex float or positioning rules.*/
+    align-items: center;                    /*align-items, aligns flex items*/
+    justify-content:space-between;          /*justify-content is used with Flexbox to align items along the main axis (usually horizontal)*/
+    position: fixed;
+    top: 0;
+    left:0;
+    
+     
+ }
+ 
+ nav ul li{
+     display:inline-block;              /*Compare to display flex*/
+     list-style:none;                   /*remove bullets*/
+     margin:10px 20px;                  /*Spacing around each list item*/
+ }
+
+ nav ul li a{
+     color: #fff;
+     text-decoration: none;             /*remove line from link*/
+     font-size: 18px;
+     position: relative;
+     
+ }
+
+ /*line under link appears after hover*/
+ nav ul li a:hover::after{
+     width: 100%;
+     
+ }
+ 
+ .logo{
+     width: 100px;
+     margin-left: 170px;
+     
+ }
+ 
+ .header-text{
+     margin-top: 20%;
+     font-size: 30px;
+ }
+ 
+ .header-text p{
+     margin-top:30px;
+ }
+ 
+ .header-text h1{
+     margin-top: 20px;
+     font-size: 50px;
+ }
+ 
+ /* edit my name
+     .header-text h1 span{
+     margin-top: 20px;
+     font-size: 50px;
+ }*/
+ 
+ /*--------about--------*/
+ #about{
+     padding: 30px 0;
+     font-size: 18px;
+     
+ }
+ 
+ .subtitle{
+     font-size: 50px;
+     font-weight:600;
+ }
+ 
+ .tab-titles{
+     display:flex;
+     margin: 20px 0 40px;
+     
+ }
+ 
+ .tabs{
+     font-size: 18px;
+     cursor: pointer;
+     position: relative;
+     margin-right: 100px;
+ }
+ 
+ /*line under link,hidden by setting width to 0*/
+ nav ul li a::after{
+    content:''; /*define empty content*/
+    width: 0;
+    height: 3px;   /*set thickness of line*/
+    background: #fff;
+    position:absolute;
+    left:0;
+    bottom: -6px; /*set how close the line is to the text*/
+    transition: 0.5s; /*line transition speed*/
+}
+ /*line under link when active*/
+ .tabs.active-link::after{
+     width: 50%;
+     
+ }
+ 
+ .tab-contents ul li{
+     list-style:none;
+     margin:10px 0;
+ }
+ 
+ .tab-contents ul li span{
+     color:rgb(218, 25, 218);
+     font-size: 18px;
+ }
+ 
+ .tab-contents{/*hides all tab content*/
+     display: none;
+ }
+ 
+ .tab-contents.active-tab{/*Makes active tab visible*/
+     display:block;
+ }
+ 
+ /*myservices*/
+ #services{
+     padding:30px 0;
+ }
+ 
+ .services-list{
+     display:grid;
+     grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+     grid-gap: 40px;
+     margin-top: 50px;
+ }
+ 
+ .services-list div{
+     background:rgb(89, 24, 133);
+     padding: 40px;
+     font-size: 14px;
+     font-weight: 300;
+     border-radius: 10px;
+     transition: background 0.5s,transform 0.5s;
+ }
+ 
+ .services-list div h2{
+     font-size: 30px;
+     font-weight: 500;
+     margin-bottom: 15px;
+ }
+ 
+ .services-list div a{
+     text-decoration: none;
+     color:#fff;
+     margin-top: 20px;
+     display: inline-block;
+ }
+ 
+ .services-list div:hover {
+     background:rgb(155, 19, 155);
+     transform: translateY(-10px);
+
+ }
+
+ #portfolio{
+     padding:50px 0;
+ }
+ 
+ .work-list{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     grid-gap: 40px;
+     margin-top: 50px;
+ }
+ 
+ .work{
+     border-radius:10px;
+     position: relative;
+     overflow: hidden;
+ }
+ 
+ .work img{
+     width: 100%;
+     border-radius: 10px;
+     display:block;
+     
+ }
+ nav .fas{
+     display: none;
+ }
+ 
+ /*---------small screens-------*/
+ 
+ @media only screen and (max-width:600px){
+     .header-text{
+         margin-top:100%;
+         font-size: 16px;
+     }
+     .header-text h1{
+         font-size:30px;  
+     }
+ 
+     nav ul{
+         background: rgb(155, 19, 155);
+         position: fixed;
+         top:0;
+         right:-200px;/* sidemenu is hidden, use javascript to shift into view on click*/
+         width: 200px;
+         height:100vh;
+         padding-top:50px;
+         z-index: 1;
+         
+     }
+ 
+     nav ul li{
+         display: block;
+         margin: 25px;
+     }
+     nav .fas{
+         display: block;/*icons become visible*/
+         font-size:25px;
+     }
+ 
+     nav ul .fas{/*position close graphic to the top left of menu*/
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor:pointer;
+    }
+     .tabs{
+         font-size: 14px;
+     }
+ }
+ /*How to comment*/
+ /*Things to play with: inline,block, min-max height,overflow:scroll, auto, visible,hidden
+ float:none,left,right

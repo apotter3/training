@@ -1,0 +1,20 @@
+*{
+    font-family:'Lacquer', serif;
+}
+h1{
+    display:inline-block; /*switch between block and inline to see the difference*/
+    background-color: cyan;
+}
+
+/*Examples of inline level elements:
+
+    An inline element does not start on a new line. An inline element only takes up as much width as necessary.
+
+    <a>, <span>, <strong>, <em>, <b>, <i>, <img>, etc
+    
+Examples of block level elements:
+
+    A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.
+    A block-level element always takes up the full width available (stretches out to the left and right as far as it can).
+
+    All headings, <p>, <div>, <ol>, <ul>, <nav>, etc */

@@ -1,0 +1,100 @@
+
+/*unfortunately, setting percentages can only work until a certain point. Boxes may move out of position if the screen size is TOO small. 
+    Here we will learn how to use queries to improve responsive design.*/
+
+.box1{
+    background-color: lightseagreen;
+    width: 60%;
+    float:left;
+}
+
+.box2{
+    background-color: lightblue;
+    width: 40%;
+    float:right;
+}
+
+body {
+    font-size: 16px; /* Default for mobile */
+    /*font-size: 20px; /* Default for desktop */
+}
+
+h1{
+    text-align: center;
+}
+
+/* The @media rule makes it possible to define how your website will look on different screen sizes. How they are ordered affects how CSS rules are applied 
+    and overridden(either biggest to smallest or smallest to biggest/ desktop-first vs mobile-first)
+
+    mobile-first
+        This approach designs for smaller screens first and then adds styles as the screen size increases.
+        Use min-width for breakpoints in media queries, which means styles are applied starting from the smallest screen size and overridden as the screen gets larger.
+        This is a common practice as it ensures mobile devices load fewer styles and only adds styles as needed for larger screens.
+        
+    desktop-first
+        In this approach, the styles are written for larger screens first, and adjustments are made as the screen gets smaller.
+        Use max-width in media queries, applying styles from the largest size downwards.
+        This approach is useful for applications primarily intended for desktop use.*/
+
+
+
+
+
+        /* Mobile-first example */
+
+/*
+@media (min-width: 320px) {
+    body {
+        font-size: 18px; 
+        
+    }
+}
+
+@media screen and (min-width: 800px){ 
+    .box1,.box2{
+        min-height: 30em;
+       /*em is a unit of measurement that is relative to the font-size of the element. 
+       It is used to set sizes and distances in a flexible way. For example, if an element has a font-size of 16 pixels and you set its width to 2em, it will be 32 pixels wide.
+    }
+}  
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px; /* Desktop 
+    }
+}*/
+
+
+
+
+/* Desktop-first example*/
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 18px; /* Smaller screens */
+    }
+
+    h1{
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 800px){   /*Up to 800 pixels, set width of both boxes to total width of screen. Set float to none,to have one box stack on top of the other*/
+    .box1,.box2{
+        width:100%;
+        float:none;
+    }
+}  
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+
+/* Can also add another condition like this:
+@media (min-width: 800px) and (max-width: 1024){
+
+}
+
+Will only affect between 800 and 1024 width.*/

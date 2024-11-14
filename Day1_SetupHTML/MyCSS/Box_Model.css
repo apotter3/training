@@ -1,0 +1,99 @@
+
+*{
+   margin: 10px 5px;
+   font-family: 'inconsolata', serif;
+}
+
+
+.navbar ul{
+   list-style-type: none;
+   background-color: lightgrey;
+   text-align: center;
+   
+}
+.navbar li{
+   display: inline-block; 
+}
+
+
+.purplebox{
+   background-color: purple;
+   height: 300px; 
+   display: inline-block;
+   
+}
+
+.greenbox{
+   background-color:green;
+   height: 400px;
+   width: 49%;
+   float: left;
+   box-sizing: border-box; /* Ensures padding/border don’t affect width */
+   margin: 0.5%; /* Add margin for some spacing */
+
+}
+
+.containerblue{
+   height: 400px;
+   width: 49%;
+   float: right;
+   margin: 0;
+   
+}
+
+.bluebox1{
+   background-color: blue;
+   height: 190px;
+   display:inline-block; 
+   overflow: hidden;
+}
+
+
+
+.pinkbox{
+   background-color: pink; 
+   height: 100px;
+   overflow: hidden;
+}
+
+@font-face {
+   font-family: inconsolata;
+   src: url(https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Inconsolata:wght@200..900&display=swap);
+   font-weight: bold;
+}
+/*
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+display: none  - displays nothing
+display:inline - block behaves like a inline element and vice versa(block). inline element does not go on a new line and it only takes up as much width as needed. Block element goes on a new line and takes up full width.
+display:inline-block - doesn't cause line break after(space before next element), keeps some properties of a block such as being able to set width, height, margins
+
+overflow: hidden -  hides content exceeding container
+overflow: scroll - scroll bars
+overflow: auto - similar to overflow scroll, browser automatically calculates it
+overflow: visible - can see overflow
+
+Place elements left or right, allows inline elements to wrap around it.
+   float: left - stops line break, floats left and changes order
+   float: right - same
+
+Position property takes elements out of their natural flow in the document. Use left, right, top, bottom for final positioning.
+
+   position: absolute - can position in particular coordinates in relation to the entire document. 
+   left: - position to the left
+   right: position to the right
+   position: relative - position in relation to container itself rather than the browser
+
+z-index: - all elements positioned relative or absolute have a z-index, can change to fix overlapping. higher index shows up first
+
+CSS reset trick:
+   if margins, padding, ect, become annoying, you can reset them for the entire document(*).
+
+   *{
+      margin: 0;
+      padding: 0;
+   }
+
+
+*/

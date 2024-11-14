@@ -1,0 +1,190 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', serif;  
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+header{
+    width: 100vw;      /*vw for viewport width, which works similar to vh but is based on the width of the viewport.*/
+    height: 100vh;     /*Setting an element’s height to 100vh makes it exactly as tall as the viewport(the visible part of the web page), filling the entire screen vertically.*/
+    background-image: radial-gradient(farthest-side at 100% 70%,rgb(134, 212, 134),rgb(19, 179, 152),rgb(17, 219, 94));
+}
+
+#header-text{
+    margin-top: 30%;
+    font-size: 30px;
+}
+
+#header-text p{
+    margin-top:40px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background: rgba(0, 0, 0, 0.1); /*use rgba values to change opacity of background without affecting child elements*/  
+    
+}
+
+nav ul li{
+    display:inline-block;              /*Compare to display flex*/
+    list-style:none;                  /*remove bullets*/
+    margin:10px 20px;                  /*Spacing around each list item*/
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:black ;
+    position: relative;
+}
+
+nav ul li a:hover{
+    background: purple;
+    color: white;
+
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+    
+}
+
+/*line under link,hidden by setting width to 0*/
+nav ul li a::after{
+    content:''; /*define empty content*/
+    width: 0;
+    height: 3px;   /*set thickness of line*/
+    background: #492b7a;
+    position:absolute;
+    left:0;
+    bottom: -6px; /*set how close the line is to the text*/
+    transition: 0.5s; /*line transition speed*/
+}
+
+nav img {
+    display: none;
+}
+
+#about{
+    padding: 30px;
+    height:50vh;
+}
+
+#about p{
+    padding: 20px 0;
+}
+
+.tab-titles{
+    display:flex;
+    margin: 20px 0 40px;
+    
+}
+
+.tabs{
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 100px;
+}
+
+/*line under link when active*/
+.tabs.active-link::after{
+    width: 50%;
+    
+}
+.tab-contents ul li{
+    list-style:none;
+    margin:10px 0;
+}
+
+.tab-contents ul li span{
+    color:rgb(218, 25, 218);
+    font-size: 18px;
+}
+
+.tab-contents{/*hides all tab content*/
+    display: none;
+}
+
+.tab-contents.active-tab{/*Makes active tab visible*/
+    display:block;
+}
+
+.services-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /*1 fr is equal to 225px. Represents one part of the available space in a grid container*/
+    grid-gap: 40px;
+    margin-top: 30px;
+}
+
+.services-list div{
+    background:rgb(28, 170, 64);
+    padding: 30px;
+    border-radius: 10px;
+    transition: background 0.5s,transform 0.5s;
+}
+
+.services-list div h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.services-list div a{
+    text-decoration: none;
+    color:#fff;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover {
+    background:rgb(155, 19, 155);
+    transform: translateY(-10px);
+}
+
+@media (max-width: 600px) {
+
+    nav{
+        background: rgba(0, 0, 0, 0);
+    }
+
+    nav ul{
+        background: rgb(245, 244, 245);
+        position: fixed;
+        top:0;
+        right:-200px;/* sidemenu is hidden, use javascript to shift into view on click*/
+        width: 200px;
+        height:100vh;
+        padding-top:50px;
+        z-index: 1;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    
+    nav img{ /*make images visible*/
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    nav ul img{ /*move close image to the top left corner*/
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
+    
+    
+}
+

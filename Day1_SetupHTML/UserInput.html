@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+</head>
+<body>
+    <!--user input and feedback-->
+    <form id="SignUpForm">
+        <h1 id="myH1"> Welcome!</h1>
+            <label for="fname">First name: </label> <!--Tell user what they should enter-->
+            <input type="text" id="fname" placeholder="John" required> <!--Set up user input-->
+            <br><br>
+            <label for="lname">Last name: </label> <!--Tell user what they should enter-->
+            <input type="text" id="lname" placeholder="Doe" required>
+            <br><br>
+            <label for="email">Email: </label> <!--Tell user what they should enter-->
+            <input type="email" id="email" placeholder="Email" required>
+            <br><br>
+            <label for="Other">Other: </label> <!--Tell user what they should enter-->
+            <textarea id="Other" cols="30" rows="10"></textarea>
+            <br><br>
+            <button type="submit" id ="signUpbtn">SignUp</button>
+            <p id="error-message" style="color: red;"></p>
+        </form>
+        
+        
+        <script src="./MyScripts/UserInput.js"></script>
+        
+        
+        
+        
+        
+        <!----
+        
+        <br><br>
+        
+        
+        <button onclick="myFunction()"> Submit </button>
+        <h1 id="message"></h1>  <!--Create an area for feedback to appear-->
+<!-----
+        <textarea rows="10" cols="10"> 
+
+        </textarea>
+  
+        Other input types:
+        text
+        date
+        password
+        checkbox
+        radio
+
+        <script>
+            function myFunction(){
+                let name = document.querySelector("#userInput"); //The Document method querySelector() returns the first Element within the document that matches
+                let message = document.querySelector("#message");
+
+                message.innerHTML = "Thank you for your submission " + userInput.value + "!"; //innerHTML is used to access the html content
+            }
+        </script>
+
+        
+    -->
+    
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./MyCSS/navigationbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+            <div class="container">
+                <nav>
+                    <ul id="menu">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <img src="./icons/filter-solid.svg" onclick="closemenu()">
+                    </ul>
+                    <img src="./icons/bars-solid.svg" onclick="openmenu()">
+                </nav>
+                
+                <div id="header-text">
+                    <h1>Welcome To My Page!</h1>
+                    <p>This is a page about myself</p>
+                </div>
+            </div>
+    </header>
+
+
+    <!---About section-->
+    <div id="about">
+        <div class="container">
+            <h1>About Me</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam a voluptatibus natus accusantium ducimus fugiat illo odio quis cumque, modi totam voluptas dolor, esse eligendi saepe! Optio nihil dolorum error.</p>
+        
+            <div class="tab-titles">
+                <p class="tabs active-link" onclick="opentab('skills')"> Skills</p> <!--onclick to make tabs functional and show correct text-->
+                <p class="tabs" onclick="opentab('experience')"> Experience</p>
+                <p class="tabs" onclick="opentab('education')"> Education</p>
+            </div>
+
+            <!---Skills-->
+            <div class="tab-contents active-tab" id="skills"><!---Add opentab function to each tab content-->
+                <ul>
+                    <li><span>Web development</span><br></li>
+                    <li><span>iOS App development</span><br></li>
+                    <li><span>UI/UX</span><br></li>
+
+                </ul>
+            </div>
+
+            <!---Experience-->
+            <div class="tab-contents" id="experience"><!---Add opentab function to each tab content-->
+                <ul>
+                    <li><span>Sigma</span><br></li>
+                    <li><span>Chungus</span><br></li>
+                    <li><span>UI/UX</span><br></li>
+
+                </ul>
+            </div>
+
+            <!---Education-->
+            <div class="tab-contents" id="education"><!---Add opentab function to each tab content-->
+                <ul>
+                    <li><span>Alpha</span><br></li>
+                    <li><span>Chungus</span><br></li>
+                    <li><span>UI/UX</span><br></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!------------services-------->
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="#">learn more</a>
+                </div>
+                <div>
+                    <h2>UI/UX</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="#">learn more</a>
+                </div>
+                <div>
+                    <h2>Tutoring</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="#">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer>
+    
+</footer>
+    <script>
+         var menu = document.getElementById("menu");
+
+        function openmenu(){
+            menu.style.right="0";
+        }
+
+        function closemenu(){
+            menu.style.right="-200px";
+        }
+    </script>
+
+
+    <script>
+        var tabs =  document.getElementsByClassName("tabs");/*create variable to store tabs(links) and tab contents(content for each tab) class*/
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){  /*define opentab function and create for loops to remove the line and text for each tab and its content on click*/
+            for(tab of tabs){
+                tab.classList.remove("active-link");/* removes the line under the current active link*/
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");/* removes the text under the current active tab*/
+            }
+
+            event.currentTarget.classList.add("active-link"); /* Will display the active link onclick*/
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+</body>
+</html>
+
+<!---<a> tag is used to add a hyperlink
+    nav tag should be used for primary navigation-->
